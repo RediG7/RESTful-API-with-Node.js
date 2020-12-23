@@ -2,9 +2,12 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const mongoose  = require("mongoose");
 
 const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
+
+mongoose.connect("mongodb+srv://redi:<yourPassword>@testcluster1.hvjuc.mongodb.net/shopDB?retryWrites=true&w=majority", {useNewUrlParser: true,  useUnifiedTopology: true});
 
 app.use(morgan('dev')); // HTTP request logger middleware for node.js
 app.use(bodyParser.urlencoded({extended: false}));
