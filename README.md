@@ -1,3 +1,3 @@
 # RESTful-API-with-Node.js
 Simple REST API with Node.js
-Day 1/4.
+Day 2/4.
