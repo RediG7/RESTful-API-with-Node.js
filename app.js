@@ -8,8 +8,10 @@ const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 
 mongoose.connect("mongodb+srv://redi:<yourPassword>@testcluster1.hvjuc.mongodb.net/shopDB?retryWrites=true&w=majority", {useNewUrlParser: true,  useUnifiedTopology: true});
+mongoose.Promise = global.Promise;
 
 app.use(morgan('dev')); // HTTP request logger middleware for node.js
+app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 // adding before any response happens, second param is to give access (*) in this case to all clients
