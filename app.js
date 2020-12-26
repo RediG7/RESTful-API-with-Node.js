@@ -6,8 +6,9 @@ const mongoose  = require("mongoose");
 
 const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
+const userRoutes = require('./api/routes/user');
 
-mongoose.connect("mongodb+srv://redi:<yourPassword>@testcluster1.hvjuc.mongodb.net/shopDB?retryWrites=true&w=majority", {useNewUrlParser: true,  useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://redi:"+process.env.MONGO_DB_ATLAS+"@testcluster1.hvjuc.mongodb.net/shopDB?retryWrites=true&w=majority", {useNewUrlParser: true,  useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
 
 app.use(morgan('dev')); // HTTP request logger middleware for node.js
@@ -30,6 +31,7 @@ app.use((req, res, next) => {
 // middleware, routes which should handle requests
 app.use("/products", productRoutes);
 app.use("/orders", orderRoutes);
+app.use('/user', userRoutes);
 
 app.use((req, res, next) => {
     const error = new Error("Not found");
