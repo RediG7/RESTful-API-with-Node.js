@@ -4,15 +4,25 @@
   "description": "A Node.js RESTful API (Build a simple shop API)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "supervisor server.js"
   },
+  "keywords": [
+    "node",
+    "restful",
+    "api"
+  ],
   "author": "Redi Guleksi",
   "license": "ISC",
-  "
-  ": {
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.8",
     "morgan": "^1.10.0",
     "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "supervisor": "^0.12.0"
   }
 }
