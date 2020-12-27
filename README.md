@@ -2,4 +2,3 @@
 Simple REST API with Node.js
 Day 6/6.
 
-Note: Multer is required at products.js not app.js
