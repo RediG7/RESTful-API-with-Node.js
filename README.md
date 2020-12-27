@@ -1,5 +1,4 @@
 # RESTful-API-with-Node.js
-Simple REST API with Node.js
 Shop REST API with products, orders, users. 
 
 You can GET & POST at /products route and GET, PATCH, DELETE for a specific product id at /products/{id}. 
